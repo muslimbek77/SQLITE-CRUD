@@ -28,3 +28,5 @@ text = """SELECT * FROM STUDENTS;"""
 cursor.execute(text)
 all_students = cursor.fetchall()
 print(all_students)
+
+connection.close()
