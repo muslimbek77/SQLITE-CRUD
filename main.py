@@ -17,11 +17,32 @@ cursor = connection.cursor()
 
 # text = """INSERT INTO Students 
 # (First_name,Last_name,Phone_number,Age,address) VALUES
-# ('Azizbek','Mirzaolimov','+998901465737','16','2-Mikrorayon'),
-# ('Javohir','Oxunjonov','+998880070032','17','Asaka')
+# ('Azizbek','Mirzaolimov','+9989011465737','16','2-Mikrorayon'),
+# ('Javohir','Oxunjonov','+9988800270032','17','Asaka')
 # """
 # cursor.execute(text)
 # connection.commit()
+
+# #READ
+# text = """SELECT * FROM STUDENTS;"""
+# cursor.execute(text)
+# all_students = cursor.fetchall()
+# print(all_students)
+
+# #UPDATE
+# text = """UPDATE Students
+# SET address = 'Andijon, 2-Mikrarayon'
+# WHERE Phone_number='+998901465737';"""
+# cursor.execute(text)
+# connection.commit()
+
+# text = """DELETE FROM Students WHERE phone_number='+9989011465737' or phone_number='+9988800270032';"""
+# cursor.execute(text)
+# connection.commit()
+
+text = """DROP TABLE Students;"""
+cursor.execute(text)
+connection.commit()
 
 #READ
 text = """SELECT * FROM STUDENTS;"""
